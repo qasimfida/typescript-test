@@ -1,23 +1,24 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import * as React from 'react';
+import React from 'react';
 import * as am4core from '@amcharts/amcharts4/core';
 import * as am4charts from '@amcharts/amcharts4/charts';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
-import { useEffect } from 'react';
 import { IData } from '../../types/ChartTypes';
 
+import { useEffect, FC } from 'react';
+import { styles } from './styles';
 am4core.useTheme(am4themes_animated);
 
 interface IProps {
     data?: IData[] | [];
 }
-const Chart: React.FC<IProps> = ({ data = [] }) => {
+const Chart: FC<IProps> = ({ data = [] }) => {
+    const classes = styles();
     useEffect(() => {
         const chart = am4core.create('chartdiv', am4charts.XYChart);
 
         chart.data = data || [];
-
         // Create axes
         const dateAxis = chart.xAxes.push(new am4charts.DateAxis());
         const valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
@@ -35,8 +36,10 @@ const Chart: React.FC<IProps> = ({ data = [] }) => {
         bullet.disabled = true;
 
         const secondCircle = bullet.createChild(am4core.Circle);
-        secondCircle.radius = 6;
-        secondCircle.fill = chart.colors.getIndex(8);
+        secondCircle.radius = 5;
+        secondCircle.strokeWidth = 0;
+        secondCircle.stroke = am4core.color('#28C76F');
+        secondCircle.fill = am4core.color('#28C76F');
         secondCircle.disabled = false;
 
         // disabled labels and grid
@@ -44,7 +47,14 @@ const Chart: React.FC<IProps> = ({ data = [] }) => {
         valueAxis.renderer.grid.template.disabled = true;
         dateAxis.renderer.labels.template.disabled = true;
         valueAxis.renderer.labels.template.disabled = true;
+        dateAxis.renderer.grid.template.stroke = am4core.color('red');
+        valueAxis.renderer.grid.template.stroke = am4core.color('red');
     });
-    return <div id="chartdiv" style={{ width: '100%', height: '200px' }} />;
+    return (
+        <div className={classes.chartWrapper}>
+            <div id="chartdiv" className={classes.chart} />
+            <div className={classes.bottomBar}></div>
+        </div>
+    );
 };
 export default Chart;

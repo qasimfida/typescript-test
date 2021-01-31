@@ -1,22 +1,24 @@
 import { makeStyles, createStyles } from '@material-ui/core/styles';
-export const useStyles = makeStyles((theme: any) => createStyles(
-
+export const useStyles = makeStyles(() => createStyles(
 {
     card: {
-        width: '320px',
-        padding: '22px 18px 18px',
-        borderRadius: '15px',
-        minHeight: 'auto',
-        fontFamily: 'san-serif !important'
+        width: '241px',
+        height: '307px',
+        padding: '16px',
+        borderRadius: '8px',
+        border: '1px solid #E4E4E4'
     },
     heading: {
+        fontSize: '17px',
+        color: '#0E103C',
         fontWeight: 600,
-        lineHeight: '24px',
+        lineHeight: '23.85px',
+        letterSpacing: '1px'
     },
     paper: {
         display: 'flex',
         justifyContent: 'space-between',
-        padding: '8px 0',
+        padding: '7px 0',
         alignItems: 'center'
     },
     cardHeading: {
@@ -30,41 +32,68 @@ export const useStyles = makeStyles((theme: any) => createStyles(
     cardButton: {
         borderRadius: '16px',
         padding: '3px 10px',
-        fontSize: '14px',
+        fontSize: '12px',
+        fontWeight: 400,
         textTransform: 'capitalize',
         minWidth: 'auto',
-        minHeight: 'auto'
+        minHeight: 'auto',
+        background: '#28C76F',
+        width: '34px',
+        height: '23px'
     },
     cardAmount: {
         position: 'relative',
-        fontWeight: 'bold',
-        left: '-6px',
-        fontSize: '16px'
+        fontWeight: 600,
+        fontSize: '16px',
+        lineHeight :'22.14px',
+        color: '#0E103C',
+        padding: '0 6px 0 8px'
     },
     percentage: {
-        fontWeight: 'bold',
-        fontSize: '12px'
+        lineHeight :'16.61px',
+        fontWeight: 600,
+        fontSize: '12px',
+        color: '#28C76F'
     },
     userImage: {
-        width: '32px',
-        height: '32px',
+        width: '24px',
+        height: '24px',
     },
     postDate : {
-        color: 'gray'
+        lineHeight :'17px',
+        fontSize: '12px',
+        color: '#CDCDCD'
     },
     margins: {
         margin: '0 4px'
     },
     btnLike: {
-        borderRadius: '30px',
-        fontWeight: 'bold',
-        color: 'gray',
+        borderRadius: '25px',
+        fontWeight: 400,
+        fontSize: '12px',
+        color: '#CDCDCD',
+        borderColor: '#CDCDCD important',
         minWidth: 'auto',
         minHeight: 'auto',
-        padding: '5px 10px'
+        height: '28px',
+        padding: '0px 10px'
+    },
+    iconSize: {
+        height: 'auto',
+        width: 'auto'
     },
     padding: {
-        padding: '16px 0 0 0'
+        padding: '14px 0 0 0'
+    },
+    star : {
+        marginLeft: '10px',
+    },
+    like : {
+        marginLeft: '7px'
+    },
+    footer : {
+        position: 'relative',
+        top: '-10px'
     }
 }
 ));

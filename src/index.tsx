@@ -1,13 +1,22 @@
-import * as React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './containers/App';
 import reportWebVitals from './reportWebVitals';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+const theme = createMuiTheme({
+    typography: {
+        fontFamily: ['Monument', 'sans-serif'].join(','),
+    },
+});
 
 ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
+    <ThemeProvider theme={theme}>
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
+    </ThemeProvider>,
     document.getElementById('root'),
 );
 

@@ -1,9 +1,15 @@
+@font-face {
+    font-family: 'Monument';
+    font-weight: 400;
+    src: url('./assets/fonts/Monument-Grotesk/ABCMonumentGrotesk-Regular-Trial.woff2') format('woff2'),
+        url('./assets/fonts/Monument-Grotesk/ABCMonumentGrotesk-Regular-Trial.woff') format('woff'),
+        url('./assets/fonts/Monument-Grotesk/ABCMonumentGrotesk-Regular-Trial.otf') format('truetype');
+}
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-        'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: 'Monument', sans-serif;
 }
 
 code {
@@ -12,4 +18,7 @@ code {
 .body,
 #root {
     height: 100vh;
+}
+.amcharts-chart-div a {
+    display: none !important;
 }
